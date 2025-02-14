@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://img.freepik.com/premium-photo/raster-illustration-thunderstorm-clouds-sky-with-electric-lightning-weather-conditions-storm-warning-bright-white-light-danger-cold-nature-concept-3d-artwork-background-business_76964-2255.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="datetime-local"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="container">
+            <form id="flight-status-form" action="statusdetails.html" method="get">
+                <label for="flight-number">Flight Number:</label>
+                <input type="text" id="flight-number" name="flight-number" required><br><br>
+                <label for="type">Type:</label>
+                <select id="type" name="type">
+                    <option value="domestic">Domestic</option>
+                    <option value="international">International</option>
+                </select><br><br>
+                <label for="origin">Origin:</label>
+                <input type="text" id="origin" name="origin" required><br><br>
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" required><br><br>
+                <label for="departure-time">Departure Time:</label>
+                <input type="datetime-local" id="departure-time" name="departure-time" required><br><br>
+                
+                <input type="submit" value="Check Status">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking - Booking Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/premium-photo/airplane-taking-off-from-airport_37416-74.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        form {
+            margin: 0 auto;
+            max-width: 400px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        select,
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .confirmation-message {
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+            color: #fff;
+        }
+        .confirmation-message p {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .confirmation-message span {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Booking Details</h1>
+
+    <form id="booking-form" action="#" method="post" onsubmit="return showConfirmationMessage()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="class">Class:</label>
+        <select id="class" name="class" required>
+            <option value="economy">Economy</option>
+            <option value="business">Business</option>
+            <option value="first">First Class</option>
+        </select>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Ticket booking confirmation message -->
+    <div class="confirmation-message" id="confirmation-message">
+        <p>Your ticket has been booked</p>
+        <p>Passenger ID: <span id="passenger-id"></span></p>
+        <p>Ticket Number: <span id="ticket-number"></span></p>
+    </div>
+
+    <script>
+        function showConfirmationMessage() {
+            
+            var passengerID = Math.floor(Math.random() * 1000) + 1;
+            var ticketNumber = Math.floor(Math.random() * 10000) + 1;
+
+          
+            document.getElementById("confirmation-message").style.display = "block";
+            document.getElementById("passenger-id").innerText = passengerID;
+            document.getElementById("ticket-number").innerText = ticketNumber;
+
+            
+            return false;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        select, input[type="number"], input[type="datetime-local"], input[type="submit"] {
+            width: calc(100% - 20px); 
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #c0132a;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Flights</h1>
+    </header>
+    <div class="container">
+        <form id="flightForm" method="post">
+            <label for="origin">Origin:</label>
+            <select id="origin" name="origin">
+                <option value="bangalore">Bangalore</option>
+                <option value="mysore">Mysore</option>
+                <option value="mangalore">Mangalore</option>
+            </select>
+
+            <label for="destination">Destination:</label>
+            <select id="destination" name="destination">
+                <option value="bangalore">Bangalore</option>
+                <option value="mysore">Mysore</option>
+                <option value="mangalore">Mangalore</option>
+                <option value="pondicherry">Pondicherry</option>
+                <option value="goa">Goa</option>
+            </select>
+
+            <label for="passengers">Number of Passengers:</label>
+            <input type="number" id="passengers" name="passengers" min="1">
+
+            <label for="departure">Departure:</label>
+            <input type="datetime-local" id="departure" name="departure">
+
+            <label for="return">Return:</label>
+            <input type="datetime-local" id="return" name="return">
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("flightForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+          
+            const formData = new FormData(this);
+            
+            const queryString = new URLSearchParams(formData).toString();
+            
+            window.location.href = "newpage.html?" + queryString;
+        });
+    </script>
+</body>
+</html>
+ss

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('data:image/jpeg;base64,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'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        select,
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .confirmation-message {
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .payment-options {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center; 
+            margin-top: 20px;
+        }
+        .payment-option {
+            margin: 10px; 
+            flex: 1; 
+            text-align: center; 
+        }
+        .payment-option img {
+            width: 400px;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .payment-option img:hover {
+            transform: scale(1.1);
+        }
+        
+    </style>
+</head>
+<body>
+
+    <h1>Payment Details</h1>
+
+    <form id="payment-form" action="#" method="post">
+        <label for="card-number">Card Number:</label>
+        <input type="text" id="card-number" name="card-number" required>
+
+        <label for="card-holder">Card Holder Name:</label>
+        <input type="text" id="card-holder" name="card-holder" required>
+
+        <label for="expiry-date">Expiry Date:</label>
+        <input type="date" id="expiry-date" name="expiry-date" required>
+
+        <label for="cvv">CVV:</label>
+        <input type="number" id="cvv" name="cvv" required>
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <input type="submit" value="Pay Now">
+    </form>
+
+    <div class="confirmation-message" id="confirmation-message">
+        Payment successful! Thank you for using our airlines.
+        Ticket will sent to your Email Id
+    </div>
+    <div class="payment-options">
+        <div class="payment-option">
+            <img src="https://www.shutterstock.com/image-vector/travel-sale-banner-yellow-tag-260nw-1750129319.jpg" alt="Visa">
+        </div>
+        <div class="payment-option">
+            <img src="https://c8.alamy.com/comp/2JE4G8G/travel-promo-vector-design-travel-tour-text-with-special-offer-discount-with-airplane-and-location-pin-elements-for-flight-travelling-price-sale-2JE4G8G.jpg" alt="Mastercard">
+        </div>
+        <div class="payment-option">
+            <img src="https://img.freepik.com/premium-vector/travel-sale-banner-with-yellow-tag-tickets-hot-fares-domestic-international-flights_372769-345.jpg" alt="PayPal">
+        </div>
+        <div class="payment-option">
+            <img src="https://static.vecteezy.com/system/resources/previews/035/184/808/original/travel-agency-flyer-template-with-airplane-and-ticket-boarding-pass-psd.png" alt="PayPal">
+        </div>
+        <div class="payment-option">
+            <img src="https://www.myflighttrip.com/img/offer/offer-bg.webp" alt="PayPal">
+        </div>
+
+    </div>
+
+
+
+    <script>
+        const paymentForm = document.getElementById('payment-form');
+        const confirmationMessage = document.getElementById('confirmation-message');
+
+        paymentForm.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+                        setTimeout(function() {
+                                confirmationMessage.style.display = 'block';
+    
+               
+                paymentForm.reset();
+            }, 2000); 
+        });
+    </script>
+
+</body>
+</html>

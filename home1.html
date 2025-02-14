@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+        
+        .container {
+           max-width: 1200px;
+           margin: 0 auto;
+           padding: 0 20px;
+        }
+        .airline-name {
+            background-image: url('https://d1lyi436ccpkte.cloudfront.net/strapi-assets/Corp_About_US_1440_X_810_d229e75e69_1_3d0c15a290.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            justify-content: center;
+            align-items: top;
+            color: black;
+            font-family: 'Monotype Corsiva';
+            font-size: 2em;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+       
+        
+        .experience {
+            font-size: 5em;
+            margin-top: 20px;
+            align-items: center;
+            justify-content: center;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        
+        header {
+            background-color: transparent;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+        nav ul li a:hover {
+            color: #007bff;
+        }
+        .signup-login-popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            color: #ece2e2;
+            border-radius: 5px;
+            z-index: 999;
+        }
+        .signup-login-popup form {
+            text-align: center;
+        }
+        .signup-login-popup input[type="text"],
+        .signup-login-popup input[type="password"],
+        .signup-login-popup input[type="email"] {
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            border: none;
+            border-radius: 3px;
+        }
+        .signup-login-popup input[type="Sign Up"] {
+            padding: 10px 20px;
+            background-color: #de4407;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #fff;
+        }
+        
+            
+        .hero-section {
+            background-image: url('https://st3.depositphotos.com/1105977/32206/i/450/depositphotos_322069858-stock-photo-passengers-commercial-airplane-flying-above.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .hero-section h1 {
+            font-size: 3em;
+        }
+        
+        
+
+        
+           
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #b33e14;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        
+        .about-content {
+            background-color: rgba(255, 255, 255, 0.8); /* White transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="airline-name">
+        <h1>Welcome to Phantom Flight Ticket booking System</h1>
+        <br><br>
+        <h2>Experience the best Journey !</h2>
+     </div>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="Flights.html">Flights</a></li>
+            <li><a href="About.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="mybookings.html">My Bookings</a></li>
+            <li><a href="payment.html">Payment</a></li> 
+            <li><a href="flightstatus.html">Flight Status</a></li> 
+            <li><a href="#" onclick="openSignupPopup()">Sign Up</a></li>
+            <li><a href="#" onclick="openLoginPopup()">Login</a></li>
+        </ul>
+    </nav>
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Your Adventure Starts Here</h1>
+        </div>
+    </div>
+   
+    <div class="signup-login-popup" id="signup-popup">
+        <span class="popup-close" onclick="closeSignupPopup()">&times;</span>
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <input type="text" name="username" placeholder="Username"><br>
+            <input type="email" name="email" placeholder="Email"><br>
+            <input type="password" name="password" placeholder="Password"><br>
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+    <div class="signup-login-popup" id="login-popup">
+        <span class="popup-close" onclick="closeLoginPopup()">&times;</span>
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="email" name="email" placeholder="Email"><br>
+            <input type="password" name="password" placeholder="Password"><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    
+    
+    <script>
+        
+        function openSignupPopup() {
+            document.getElementById("signup-popup").style.display = "block";
+        }
+
+        function closeSignupPopup() {
+            document.getElementById("signup-popup").style.display = "none";
+        }
+
+        document.getElementById("signup-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Signed up successfully!");
+        });
+
+        function openLoginPopup() {
+            document.getElementById("login-popup").style.display = "block";
+        }
+
+        function closeLoginPopup() {
+            document.getElementById("login-popup").style.display = "none";
+        }
+
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Logged in successfully!");
+        });
+    </script>
+    <footer>
+        <p>&copy; 2024 Flight Booking. All rights reserved.</p>
+    </footer>
+</body>
+</html>

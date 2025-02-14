@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://st2.depositphotos.com/2124221/46825/i/450/depositphotos_468252914-stock-photo-creative-prismatic-background-polygonal-pattern.jpg'); /* Replace 'background-image.jpg' with your image file */
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff; 
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); 
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #fff; 
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+        input[type="text"],
+        input[type="date"] {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #333; 
+            background-color: #fff; 
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Bookings</h1>
+        <form id="booking-form">
+            <label for="booking-id">Booking ID</label>
+            <input type="text" id="booking-id" name="booking-id" required><br><br>
+            <label for="passenger-name">Passenger Name</label>
+            <input type="text" id="passenger-name" name="passenger-name" required><br><br>
+            <label for="booking-date">Booking Date</label>
+            <input type="date" id="booking-date" name="booking-date" required><br><br>
+            <label for="booking-ref">Booking Reference Number</label>
+            <input type="text" id="booking-ref" name="booking-ref" required><br><br>
+            <label for="class">Class</label>
+            <select id="class" name="class">
+                <option value="economy">Economy</option>
+                <option value="business">Business</option>
+                <option value="first">First Class</option>
+            </select><br><br>
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    
+        <script>
+            document.getElementById('booking-form').addEventListener('submit', function(event) {
+                event.preventDefault(); 
+                var form = event.target;
+                var queryString = '';
+                for (var i = 0; i < form.elements.length; i++) {
+                    var element = form.elements[i];
+                    if (element.type !== 'submit') {
+                        queryString += encodeURIComponent(element.name) + '=' + encodeURIComponent(element.value) + '&';
+                    }
+                }
+                window.location.href = 'ticketdetails.html?' + queryString.slice(0, -1);
+            });
+        </script>
+    </div>
+</body>
+</html>
